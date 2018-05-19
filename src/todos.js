@@ -45,11 +45,11 @@ const getTodos = () => {
 }
 
 const newTodo = (data) => {
-    todos.push({
+    todo = [...todos, {
         id: uuidv4(),
         text: data.text,
         completed: false
-    })
+    }]
     saveTodos(todos)
 }
 
