@@ -1,9 +1,6 @@
 import uuidv4 from 'uuid/v4'
 
-let filters = {
-    searchText: '',
-    hideCompleted: false
-}
+let todos = []
 
 // Fetch existing todos from localStorage
 const getSavedTodos = () => {
@@ -16,12 +13,12 @@ const getSavedTodos = () => {
     }
 }
 
+todos = getSavedTodos()
+
 // Save todos to localStorage
 const saveTodos = () => {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
-
-let todos = getSavedTodos()
 
 // Remove todo by id
 const removeTodo = (id) => {
@@ -45,7 +42,7 @@ const getTodos = () => {
 }
 
 const newTodo = (data) => {
-    todo = [...todos, {
+    todos = [...todos, {
         id: uuidv4(),
         text: data.text,
         completed: false
@@ -53,20 +50,4 @@ const newTodo = (data) => {
     saveTodos(todos)
 }
 
-const getFilters = () => {
-    return filters
-}
-
-const setFilters = (updates) => {
-    if (typeof updates.searchText === 'string') {
-        filters.searchText = updates.searchText
-        return
-    }
-
-    if (typeof updates.hideCompleted === 'boolean') {
-        filters.hideCompleted = updates.hideCompleted
-        return
-    }
-}
-
-export { saveTodos, removeTodo, getFilters, setFilters, getTodos, newTodo, toggleTodo }
+export { saveTodos, removeTodo, getTodos, newTodo, toggleTodo }

@@ -1,4 +1,5 @@
-import { toggleTodo, saveTodos, removeTodo, getTodos, getFilters } from './todos'
+import { toggleTodo, saveTodos, removeTodo, getTodos } from './todos'
+import { getFilters } from './filters' 
 
 // Render application todos based on filters
 const renderTodos = () => {

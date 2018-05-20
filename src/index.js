@@ -1,5 +1,6 @@
-import { getSavedTodos, saveTodos, setFilters, getTodos, newTodo } from './todos'
+import { getSavedTodos, saveTodos, getTodos, newTodo } from './todos'
 import { renderTodos } from './views'
+import { setFilters } from './filters'
 
 renderTodos()
 
