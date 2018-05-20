@@ -4,18 +4,16 @@ const filters = {
     hideCompleted: false
 }
 
-const getFilters = () => {
-    return filters
-}
+const getFilters = () => filters
 
-const setFilters = (updates) => {
-    if (typeof updates.searchText === 'string') {
-        filters.searchText = updates.searchText
+const setFilters = ({ searchText, hideCompleted}) => {
+    if (typeof searchText === 'string') {
+        filters.searchText = searchText
         return
     }
 
-    if (typeof updates.hideCompleted === 'boolean') {
-        filters.hideCompleted = updates.hideCompleted
+    if (typeof hideCompleted === 'boolean') {
+        filters.hideCompleted = hideCompleted
         return
     }
 }

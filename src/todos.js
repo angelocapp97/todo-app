@@ -37,9 +37,7 @@ const toggleTodo = (id) => {
     }
 }
 
-const getTodos = () => {
-    return todos
-}
+const getTodos = () => todos
 
 const newTodo = (data) => {
     todos = [...todos, {
